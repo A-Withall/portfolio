@@ -1,0 +1,71 @@
+/* 
+    Jump to: 
+        Root
+        Misc
+        Technical Toolbox
+        Projects
+*/
+
+/* Root */
+:root {
+    --bs-primary: #68217a;
+    --bs-primary-rgb: 104, 33, 122;
+    --bs-secondary: #501a5d;
+    --bs-blue: var(--bs-primary);
+    scroll-behavior: auto;
+}
+
+/* Root Ends */
+
+/* Misc */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+
+    &:hover {
+        background-color: var(--bs-secondary);
+        border-color: var(--bs-secondary);
+    }
+}
+
+a.navbar-brand {
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+}
+
+/* Misc Ends */
+
+/* Technical Toolbox */
+.skill-card {
+    i {
+        color: var(--bs-blue);
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        i {
+            transform: scale(1.1);
+        }
+    }
+}
+
+/* Technical Toolbox Ends*/
+
+/* Projects */
+.project-card {
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    img {
+        object-fit: cover;
+        object-position: 50% 0%;
+        height: 200px;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+/* Projects Ends */

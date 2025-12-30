@@ -4,6 +4,7 @@
         Misc
         Technical Toolbox
         Projects
+        Responsive
 */
 
 /* Root */
@@ -31,6 +32,65 @@
 a.navbar-brand {
     font-weight: 100;
     letter-spacing: 0.1rem;
+}
+
+.navbar-toggler {
+    border: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &:not(.collapsed) {
+        .navbar-toggler-icon {
+            span {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            &::before {
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+            }
+
+            &::after {
+                bottom: 50%;
+                transform: translateY(50%) rotate(-45deg);
+            }
+        }
+    }
+
+    .navbar-toggler-icon {
+        background-image: none !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        width: 25px;
+        position: relative;
+
+        span,
+        &::before,
+        &::after {
+            content: "";
+            background-color: rgba(255, 255, 255, 0.8);
+            height: 2px;
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+            border-radius: 2px;
+            position: absolute;
+        }
+
+        &::before { top: 0; }
+        span { top: 50%; transform: translateY(-50%); }
+        &::after { bottom: 0; }
+    }
+}
+
+header,
+section {
+    overflow: hidden;
 }
 
 /* Misc Ends */
@@ -69,3 +129,48 @@ a.navbar-brand {
 }
 
 /* Projects Ends */
+
+/* Get in Touch */
+#socials a {
+    transition: all .4s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Get in Touch Ends */
+
+/* Responsive */
+
+@media all and (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #212529;
+        padding: 1.5rem;
+        margin-top: 0.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .nav-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .btn {
+                width: 100%;
+                margin-left: 0 !important;
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    [data-aos]:has(.project-card),
+    [data-aos]:has(.skill-card) {
+        transition-delay: 100ms !important;
+    }
+}
+
+/* Responsive Ends */

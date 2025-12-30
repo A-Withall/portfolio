@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    AOS.init({
+        duration: 1200,
+        once: true,
+    });
+
     $('#currentYear').text(new Date().getFullYear());
 
     $('a.navbar-brand').click(function (e) {
@@ -16,6 +21,12 @@ $(document).ready(function () {
             $('html, body').animate({
                 scrollTop: $(hash).offset().top - 70
             }, 800);
+        }
+    });
+
+    $('.navbar-nav .nav-link').click(function () {
+        if ($('.navbar-toggler').is(':visible')) {
+            $('.navbar-collapse').collapse('hide');
         }
     });
 });

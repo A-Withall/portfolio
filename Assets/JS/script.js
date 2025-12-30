@@ -29,4 +29,15 @@ $(document).ready(function () {
             $('.navbar-collapse').collapse('hide');
         }
     });
+
+    $('.contact-link').on('click', function(e) {
+        e.preventDefault();
+        
+        var user = $(this).data('user');
+        var domain = $(this).data('domain');
+        var subject = $(this).data('subject') || "Portfolio Message"; // Fallback subject
+        
+        var emailUrl = 'mailto:' + user + '@' + domain + '?subject=' + encodeURIComponent(subject);
+        window.location.href = emailUrl;
+    });
 });
